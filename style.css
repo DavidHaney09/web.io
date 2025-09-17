@@ -1,0 +1,356 @@
+/* ========== RESETEO BÁSICO ========== */
+ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== ESTILOS GENERALES ========== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f9;
+  color: #333;
+}
+
+/* ========== ENCABEZADO ========== */
+header {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+main {
+  padding: 20px;
+}
+
+/* ========== PIE DE PÁGINA ========== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: white;
+  margin-top: 20px;
+}
+
+/* ========== IMÁGENES Y VIDEOS (Etapa 6) ========== */
+img, video, iframe {
+  display: block;
+  margin: 20px auto;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+img:hover, video:hover, iframe:hover {
+  transform: scale(1.05);
+}
+
+/* ========== TARJETAS DESTACADAS (Etapa 7) ========== */
+.tarjetas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.tarjeta {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.tarjeta h3 {
+  margin-bottom: 10px;
+  color: #2575fc;
+}
+
+.tarjeta button {
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tarjeta button:hover {
+  background: #6a11cb;
+}
+
+/*  ESTILOS DEL MODAL */
+.modal { /*  nueva sección */
+  display: none; /*  nueva sección */
+  position: fixed; /*  nueva sección */
+  z-index: 1000; /*  nueva sección */
+  left: 0; top: 0; /*  nueva sección */
+  width: 100%; height: 100%; /*  nueva sección */
+  background: rgba(0,0,0,0.6); /*  nueva sección */
+  justify-content: center; /*  nueva sección */
+  align-items: center; /*  nueva sección */
+}
+
+.modal-content { /*  nueva sección */
+  background: white; /*  nueva sección */
+  padding: 20px; /*  nueva sección */
+  border-radius: 12px; /*  nueva sección */
+  width: 90%; /*  nueva sección */
+  max-width: 700px; /*  nueva sección */
+  text-align: center; /*  nueva sección */
+  position: relative; /*  nueva sección */
+}
+
+#close-modal { /*  nueva sección */
+  position: absolute; /*  nueva sección */
+  top: 10px; /*  nueva sección */
+  right: 15px; /*  nueva sección */
+  font-size: 1.5rem; /*  nueva sección */
+  cursor: pointer; /*  nueva sección */
+  color: #333; /*  nueva sección */
+}
+
+#modal video { /*  nueva sección */
+  width: 100%; /*  nueva sección */
+  border-radius: 10px; /*  nueva sección */
+}
+
+/* ========== CONTENEDOR DEL MENÚ ========== */
+.nav-container {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* MENÚ PRINCIPAL */
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 18px;
+  display: block;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background: #2575fc;
+  color: white;
+}
+
+/* SUBMENÚ */
+.submenu {
+  list-style: none;
+  position: absolute;
+  top: 100%; /* ahora está pegado sin hueco */
+  left: 0;
+  background: white;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.submenu li a {
+  color: #333;
+  padding: 10px 15px;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+.submenu li a:hover {
+  background: #2575fc;
+  color: white;
+}
+
+/* MOSTRAR SUBMENÚ: hover sobre todo el li */
+.submenu-parent:hover > .submenu {
+  display: flex;
+}
+
+/* EXTENSIÓN INVISIBLE PARA EVITAR QUE SE ESCAPE EL RATÓN */
+.submenu-parent::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px; /* área extra invisible */
+}
+
+
+/* ==== Galería horizontal con efectos ==== */
+.galeria-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 20px;
+  border-radius: 16px;
+  gap: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+.galeria-horizontal .galeria-item {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.galeria-horizontal .galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  border-radius: 12px;
+}
+
+/* Efectos al pasar el cursor */
+.galeria-horizontal .galeria-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.3);
+}
+
+.galeria-horizontal .galeria-item:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.2) contrast(1.1) saturate(1.3);
+}
+
+/* Brillo suave al pasar el mouse */
+.galeria-horizontal .galeria-item::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.galeria-horizontal .galeria-item:hover::after {
+  left: 100%;
+}
+
+
+/* ==== Carrusel interactivo con desplazamiento del mouse ==== */
+.carrusel-mouse {
+  max-width: 1000px;
+  margin: 40px auto;
+  overflow: hidden;
+  background: #000;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.carrusel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carrusel-item {
+  min-width: calc(100% / 3); /* Se muestran 3 imágenes */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+.carrusel-item img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) contrast(1.1) saturate(1.2);
+}
+
+/* ==== Modal para video local ==== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+}
+
+.modal-content video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}

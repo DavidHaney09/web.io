@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio - Mi Proyecto Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mi Proyecto Web</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="pagina2.html">Página 2</a></li>
+        <li><a href="pagina3.html">Página 3</a></li>
+      </ul>
+    </nav>
+     
+  </header>
+
+  <main>
+    <section>
+      <h2>Bienvenidos</h2>
+      <p>Este es el inicio de nuestro proyecto web paso a paso.</p>
+      <img src="img/logo.jpg" alt="Logo del proyecto" width="1050">
+      <img src="https://picsum.photos/300" alt="Imagen aleatoria">
+
+      <video controls width="360">
+        <source src="video/intro.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+
+      <iframe width="360" height="215"
+        src="https://www.youtube.com/embed/ScMzIvxBSi4"
+        title="Video de prueba YouTube"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta" data-video="innovacion.mp4"> <!--  nueva línea -->
+        <h3>Innovación</h3>
+        <p>Proyectos creativos que inspiran el cambio.</p>
+        <button type="button">Ver más</button> <!--  nueva línea -->
+      </div>
+      <div class="tarjeta" data-video="educacion.mp4"> <!--  nueva línea -->
+        <h3>Educación</h3>
+        <p>Recursos y experiencias de aprendizaje.</p>
+        <button type="button">Explorar</button> <!--  nueva línea -->
+      </div>
+      <div class="tarjeta" data-video="tecnologia.mp4"> <!--  nueva línea -->
+        <h3>Tecnología</h3>
+        <p>Soluciones digitales al alcance de todos.</p>
+        <button type="button">Descubrir</button> <!--  nueva línea -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Proyecto educativo de desarrollo web</p>
+  </footer>
+
+  <!--  Modal para mostrar video grande -->
+  <div id="modal" class="modal"> <!--  nueva sección -->
+    <div class="modal-content"> <!--  nueva sección -->
+      <span id="close-modal">&times;</span> <!--  nueva sección -->
+      <video id="modal-video" width="100%" controls></video> <!--  nueva sección -->
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
+
